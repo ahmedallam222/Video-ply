@@ -1,0 +1,626 @@
+                                @import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+                                * {
+                                    box-sizing: border-box;
+                                }
+                                
+                                 :root {
+                                    --colormain: #499D77;
+                                    --Linkscolor: #ADADAD;
+                                    --bgcolor: #fff;
+                                    --btnRcord: #D2E6DF;
+                                    --active: #E0F1E9;
+                                    --private-public: #FAFAFA;
+                                    --border: #DDDDDD;
+                                }
+                                /* START DARK Mode */
+                                
+                                .dark-mode {
+                                    filter: invert(1) hue-rotate(180deg);
+                                }
+                                
+                                .dark-mode img,
+                                .dark-mode video,
+                                .dark-mode svg,
+                                .dark-mode .hero-image,
+                                .dark-mode .box .dark-mode .play,
+                                .dark-mode .side-content .account .more span:last-child,
+                                .dark-mode .record,
+                                .dark-mode .upload {
+                                    filter: invert(1) hue-rotate(180deg);
+                                }
+                                /* Style  dark mode button */
+                                
+                                .toggle {
+                                    --size: 2rem;
+                                    appearance: none;
+                                    outline: none;
+                                    cursor: pointer;
+                                    width: var(--size);
+                                    height: var(--size);
+                                    box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+                                    border-radius: 999px;
+                                    color: #e6e6ff;
+                                    transition: all 500ms;
+                                    opacity: 1 !important;
+                                    position: revert !important;
+                                    pointer-events: revert !important;
+                                }
+                                
+                                .toggle:checked {
+                                    --ray-size: calc(var(--size) * -0.4);
+                                    --offset-orthogonal: calc(var(--size) * 0.65);
+                                    --offset-diagonal: calc(var(--size) * 0.45);
+                                    transform: scale(0.75);
+                                    color: darkgoldenrod;
+                                    ;
+                                    box-shadow: inset 0 0 0 var(--size), calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size), var(--offset-orthogonal) 0 0 var(--ray-size), 0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size), 0 var(--offset-orthogonal) 0 var(--ray-size), calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0 var(--ray-size), var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size), calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size), var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+                                }
+                                /* Style  dark mode button */
+                                /*END DARK Mode */
+                                
+                                body {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    font-family: 'DM Sans', sans-serif;
+                                    background: linear-gradient(to top, #be93c5, #7bc6cc);
+                                    font-size: 10px;
+                                    height: 100vh;
+                                    width: 100%;
+                                    padding: 25px;
+                                    flex-direction: column;
+                                    overflow: hidden;
+                                    transition: background 500ms;
+                                }
+                                
+                                .container {
+                                    display: flex;
+                                    width: 100%;
+                                    height: 100vh;
+                                    border-radius: 10px;
+                                    background-color: var(--bgcolor);
+                                    max-width: 1500px;
+                                    overflow-y: hidden;
+                                }
+                                
+                                a {
+                                    color: #000;
+                                    text-decoration: none;
+                                }
+                                
+                                .content {
+                                    scroll-behavior: smooth;
+                                    overflow-y: auto;
+                                }
+                                
+                                content .content-2 {
+                                    overflow: hidden;
+                                }
+                                
+                                .boxes {
+                                    overflow: hidden;
+                                }
+                                
+                                .content::-webkit-scrollbar {
+                                    width: 5px;
+                                }
+                                
+                                .content::-webkit-scrollbar-track {
+                                    box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+                                    background-color: var(--bgcolor);
+                                }
+                                
+                                .content::-webkit-scrollbar-thumb {
+                                    box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+                                    background: linear-gradient(to top, #be93c5, #7bc6cc);
+                                    border-radius: 100px;
+                                }
+                                
+                                .container aside {
+                                    height: 100%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    border-right: 1px solid #DDDDDD;
+                                    width: 190px;
+                                    margin-bottom: 30px;
+                                }
+                                
+                                .container aside .logo {
+                                    padding: 0px 25px 4px 0px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    border-bottom: 1px solid #DDDDDD;
+                                    cursor: pointer;
+                                }
+                                
+                                .container aside .logo a {
+                                    text-decoration: none;
+                                    font-weight: 600;
+                                    margin-right: 5px;
+                                }
+                                
+                                .container aside .logo a .fa-play {
+                                    color: var(--colormain);
+                                    font-size: 24px;
+                                }
+                                
+                                .container aside .logo p {
+                                    font-size: 20px;
+                                    color: #000000b8;
+                                    font-weight: 600;
+                                }
+                                
+                                .Linkscolor {
+                                    font-weight: 600;
+                                    font-size: 20px;
+                                    color: var(--Linkscolor);
+                                }
+                                
+                                .side-content {
+                                    flex: 1;
+                                    /* overflow: auto; */
+                                }
+                                
+                                .side-content .account {
+                                    display: flex;
+                                    padding: 20px;
+                                    cursor: pointer;
+                                    margin-bottom: 10px;
+                                }
+                                
+                                .side-content .account .more {
+                                    font-size: 12px;
+                                    line-height: 20px;
+                                }
+                                
+                                .side-content .account .more .last-name {
+                                    display: flex;
+                                }
+                                
+                                .side-content .account .more .last-name span:first-child {
+                                    margin-right: 3rem;
+                                }
+                                
+                                .side-content .account .more .last-name .fa-angle-down {
+                                    font-size: 17px;
+                                    color: var(--Linkscolor);
+                                }
+                                
+                                .side-content .account .more span:last-child {
+                                    color: var(--Linkscolor);
+                                }
+                                
+                                .links,
+                                .link2 {
+                                    display: flex;
+                                    flex-direction: column;
+                                }
+                                
+                                .links .link,
+                                .link2 {
+                                    text-decoration: none;
+                                    color: var(--Linkscolor);
+                                    font-size: 14px;
+                                    padding: 12px 20px;
+                                    margin-bottom: 10px;
+                                }
+                                
+                                .links .link:hover,
+                                .link2:hover {
+                                    background-color: #dcede578;
+                                }
+                                
+                                .links a:nth-child(4) {
+                                    margin-left: -3px;
+                                }
+                                
+                                .links a:nth-child(4) img {
+                                    height: 25px;
+                                    vertical-align: middle;
+                                }
+                                
+                                .links .active {
+                                    color: var(--colormain);
+                                    background-color: var(--active);
+                                }
+                                
+                                .links .link i,
+                                .link2 i {
+                                    margin-right: 6px;
+                                }
+                                
+                                .private,
+                                .Public {
+                                    background-color: var(--private-public);
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding: 0.625rem 1.25rem;
+                                    margin: 0.625rem 0;
+                                    color: var(--Linkscolor);
+                                    font-weight: 600;
+                                    font-size: 0.75rem;
+                                    cursor: pointer;
+                                }
+                                
+                                .private span,
+                                .Public span {
+                                    font-weight: 500;
+                                }
+                                
+                                .private i,
+                                .Public i {
+                                    font-size: 1.1rem;
+                                }
+                                
+                                .private i:hover,
+                                .Public i:hover {
+                                    background-color: var(--colormain);
+                                    color: var(--bgcolor);
+                                    border-radius: 50%;
+                                    outline: auto;
+                                }
+                                
+                                .link2 {
+                                    display: flex;
+                                    flex-direction: row;
+                                }
+                                
+                                .inviteTeam {
+                                    background-color: var(--colormain);
+                                    color: var(--bgcolor);
+                                    padding: 12px 20px;
+                                    border: none;
+                                    display: block;
+                                    margin: auto;
+                                    border-radius: 5px;
+                                    width: 160px;
+                                    margin-bottom: 4px;
+                                }
+                                
+                                main {
+                                    flex: 1;
+                                    display: flex;
+                                    flex-direction: column;
+                                    width: 100%;
+                                    overflow: hidden;
+                                }
+                                
+                                nav {
+                                    border-bottom: 1px solid var(--border);
+                                    display: flex;
+                                    align-items: center;
+                                    padding: 0px 20px;
+                                }
+                                
+                                nav .menu {
+                                    display: none;
+                                    font-size: 20px;
+                                }
+                                
+                                nav .menu:hover {
+                                    color: var(--colormain);
+                                    font-weight: 900;
+                                }
+                                
+                                nav .search {
+                                    padding: 15px 20px;
+                                    display: flex;
+                                    align-items: center;
+                                    flex: 1;
+                                    border-right: 1px solid var(--border);
+                                }
+                                
+                                nav .search i {
+                                    font-size: 17px;
+                                }
+                                
+                                .search-i {
+                                    border: none;
+                                    flex: 1;
+                                    font-size: 14px;
+                                    padding: 10px 8px;
+                                    outline: none;
+                                }
+                                
+                                .notifications {
+                                    padding-left: 13px;
+                                    padding-right: 13px;
+                                    margin-left: 10px;
+                                    margin-right: 10px;
+                                    position: relative;
+                                }
+                                
+                                .notifications i {
+                                    font-size: 20px;
+                                }
+                                
+                                .notifications span {
+                                    font-size: 10px;
+                                    background-color: red;
+                                    border-radius: 50%;
+                                    padding: 8px 0px;
+                                    color: #fff;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    width: 18px;
+                                    font-weight: bolder;
+                                    position: absolute;
+                                    height: 0px;
+                                    top: -5px;
+                                    right: 6px;
+                                }
+                                
+                                .m-link {
+                                    color: #000000c9;
+                                    text-decoration: none;
+                                    font-size: 14px;
+                                    margin-left: 15px;
+                                    font-weight: 600;
+                                }
+                                
+                                .buttons {
+                                    border-left: 1px solid var(--border);
+                                    padding-left: 18px;
+                                    height: 66px;
+                                    align-items: center;
+                                    display: flex;
+                                }
+                                
+                                nav .record,
+                                nav .upload {
+                                    border: none;
+                                    border-radius: 3px;
+                                    padding: 10px 26px 10px 15px;
+                                    margin-right: 15px;
+                                    cursor: pointer;
+                                    display: flex;
+                                    align-items: center;
+                                }
+                                
+                                nav .record i,
+                                nav .upload i {
+                                    margin-right: 6px;
+                                    font-size: 14px;
+                                }
+                                
+                                nav .record {
+                                    color: #50A380;
+                                    background-color: #dee7e4;
+                                }
+                                
+                                nav .record:hover {
+                                    background-color: var(--colormain);
+                                    color: var(--bgcolor);
+                                }
+                                
+                                nav .upload {
+                                    color: #E5EDD5;
+                                    background-color: var(--colormain);
+                                }
+                                
+                                nav .upload:hover {
+                                    background-color: #499d77b3;
+                                }
+                                
+                                .content {
+                                    padding: 2rem 20px;
+                                    flex: 1;
+                                }
+                                
+                                .content .title {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    padding: 0px 5px;
+                                    padding-bottom: 10px;
+                                }
+                                
+                                .title-right .fa-angle-left,
+                                .title-right .fa-angle-right {
+                                    color: var(--bgcolor);
+                                    background-color: var(--colormain);
+                                    border-radius: 50%;
+                                    padding: 5px 7px;
+                                    margin-left: 6px;
+                                    cursor: pointer;
+                                }
+                                
+                                .title-right .fa-angle-left:hover,
+                                .title-right .fa-angle-right:hover {
+                                    opacity: .7;
+                                }
+                                
+                                .title-right .fa-angle-left,
+                                .title-right .fa-angle-right,
+                                .title-left {
+                                    font-size: 1rem
+                                }
+                                
+                                .content .content-1,
+                                .content .content-2,
+                                .content .content-3 {
+                                    width: 100%;
+                                    margin-bottom: 2rem;
+                                }
+                                
+                                .hero-image {
+                                    height: 300px;
+                                    position: relative;
+                                    background-image: url('imgs/t1.jpg');
+                                    background-size: cover;
+                                    background-repeat: no-repeat;
+                                    background-position: center center;
+                                    border-radius: 5px;
+                                }
+                                
+                                .caption {
+                                    position: absolute;
+                                    left: 41px;
+                                    top: 29px;
+                                    color: var(--bgcolor);
+                                    font-size: 14px;
+                                }
+                                
+                                .caption p:first-child {
+                                    font-weight: bold;
+                                }
+                                
+                                .caption span {
+                                    color: var(--border);
+                                    padding: 0 2px 0 4px;
+                                }
+                                
+                                .caption .b-right {
+                                    border-right: 1px solid var(--border);
+                                }
+                                
+                                .boxes {
+                                    height: 300px;
+                                    width: 100%;
+                                    display: flex;
+                                    align-items: center;
+                                    padding-bottom: .5rem;
+                                }
+                                
+                                .box {
+                                    width: 100%;
+                                    height: 100%;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: end;
+                                    border-radius: 4px;
+                                    overflow: hidden;
+                                    box-shadow: 0px 2px 4px 0px rgb(209 209 209 / 40%);
+                                    margin-right: 10px;
+                                    cursor: pointer;
+                                }
+                                
+                                .video {
+                                    flex-grow: 1;
+                                }
+                                
+                                .video img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: cover;
+                                }
+                                
+                                .description {
+                                    background-color: #fff;
+                                    padding: 8px;
+                                    position: relative;
+                                }
+                                
+                                .description .first-p {
+                                    font-size: 0.875rem;
+                                }
+                                
+                                .description .second-p {
+                                    font-size: 0.775rem;
+                                    color: #BEBFBF;
+                                }
+                                
+                                .description .third-p {
+                                    font-size: 0.775rem;
+                                }
+                                
+                                .play {
+                                    right: 7px;
+                                    border: none;
+                                    background-color: var(--bgcolor);
+                                    border-radius: 50%;
+                                    height: 30px;
+                                    width: 31px;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    padding-left: 9px;
+                                    position: absolute;
+                                    top: -17px;
+                                }
+                                
+                                .fa-play {
+                                    color: var(--colormain);
+                                }
+                                /* START aside media query */
+                                
+                                @media screen and (min-width: 1024px) {
+                                    .dropdown {
+                                        display: none;
+                                    }
+                                }
+                                
+                                @media screen and (max-width: 1024px) {
+                                    .dropdown {
+                                        display: flex;
+                                        align-items: center;
+                                    }
+                                    .m-link,
+                                    .buttons {
+                                        display: none;
+                                    }
+                                    nav .search {
+                                        border-right: none;
+                                    }
+                                    #d-btn {
+                                        font-size: 16px;
+                                        border: none;
+                                        outline: none;
+                                        color: #fff;
+                                        padding: 5px 10px;
+                                        margin: 0 10px;
+                                        background-color: var(--colormain);
+                                        border-radius: 10px;
+                                    }
+                                }
+                                
+                                @media screen and (max-width: 900px) {
+                                    .container aside {
+                                        display: none;
+                                    }
+                                    .container nav .menu {
+                                        display: block;
+                                        margin-right: 10px;
+                                        margin-left: 5px;
+                                    }
+                                }
+                                
+                                @media screen and (max-width: 600px) {
+                                    /* Start Nav */
+                                    /* END NAV */
+                                    /* START CONTENT */
+                                    .content2 {
+                                        overflow: hidden;
+                                    }
+                                    .boxes {
+                                        overflow-x: auto;
+                                    }
+                                    .box {
+                                        flex-shrink: 0;
+                                        width: calc(100% / 2);
+                                    }
+                                    /* End CONTENT */
+                                }
+                                
+                                @media screen and (max-width:480px) {
+                                    .search-i {
+                                        font-size: 0;
+                                    }
+                                    .search-i:hover {
+                                        width: 89px;
+                                        font-size: revert;
+                                    }
+                                    .box {
+                                        width: calc(100% / 1);
+                                        height: auto;
+                                    }
+                                    .description {
+                                        display: flex;
+                                        align-items: center;
+                                        padding-bottom: 20px;
+                                        flex-direction: column;
+                                    }
+                                }
+                                /* END aside media query */
